@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+    color: aliceblue;
+    font-size: 40px;
+    text-transform: capitalize;
+    /* text-decoration: underline; */
+}
+#one{
+    text-align: center;
+    color: red;
+}
+*{
+  background-color:rgb(54, 54, 101);
+}
+textarea {
+    height: 50px;
+    width: 500px;
+    padding: 10px;
+}
+html, body {
+  height: 100vh;
+  margin: 40px;
+  
+} 
+.but{
+  text-align: center;
+}
+.but button{
+  background-color: rgb(242, 243, 243);
+  bottom: 20px;
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+.two,.three,.four,.five,.six{
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+#box1,#box2,#box3,#box4,#box5{
+  color: aliceblue;
+  gap: 100px;
+}
+.two p{
+  color: aliceblue;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+

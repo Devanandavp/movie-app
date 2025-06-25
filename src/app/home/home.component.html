@@ -1,0 +1,26 @@
+<h1>MOVIE MANIA</h1>
+<h2>"Cinematic experiences, simplified"</h2>
+<nav id="island">
+  <ul class="nav">
+    <li><a href="#"><img src="https://cdn.vectorstock.com/i/1000v/14/04/home-icon-vector-20131404.jpg" alt="Home" /></a></li>
+    <li><a href="#"><img src="https://static.vecteezy.com/system/resources/previews/026/823/004/non_2x/feedback-form-icon-icon-related-to-survey-line-icon-style-simple-design-editable-vector.jpg" alt="Contact Us" /></a></li>
+    <li><a href="/admin"><img src="https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-vector-document-filter-icon-png-image_926388.jpg" alt="Filters" /></a></li>
+    <li><input type="search" placeholder="Search your movie..." id="search" /></li>
+  </ul>
+</nav>
+
+<div class="movie-grid">
+  <div *ngFor="let movie of movies" class="movie-card">
+<img
+  [src]="movie.backdrop_path? 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path: '/assets/images/default-poster.jpg'"
+  [alt]="movie.title"
+/>
+    <div class="movie-info">
+      <a href="/detail">
+        <h3>{{ movie.title }}</h3>
+      </a>
+      <p><strong>Release:</strong> {{ movie.release_date }}</p>
+      <p><strong>Rating:</strong> {{ movie.vote_average }} ⭐</p>
+    </div>
+  </div>
+</div>

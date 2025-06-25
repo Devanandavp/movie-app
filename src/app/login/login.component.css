@@ -1,0 +1,56 @@
+.heading h1{
+  color:rgb(54, 54, 101);
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.heading h2{
+  color: rgb(19, 18, 18);
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box3{
+  text-align: center;
+  justify-content: center;
+}
+.box3 input[type="submit"]{
+  background-color:rgb(54, 54, 101);
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+}
+#one{
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+#password{
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.container {
+  background: #9e98982f;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+  text-align: center; 
+  margin-top: 100px;
+
+}

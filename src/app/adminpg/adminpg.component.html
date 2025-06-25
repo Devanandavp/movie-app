@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+</head>
+<body>
+    <form class="container" (ngSubmit)="add()">
+            <div class=" box1">
+                <h2>ADD NEW MOVIE</h2>
+                <div>
+                    <input type="text" placeholder="Title" id="title" name="name" [(ngModel)]="name" >
+                <div>
+                     <input type="text" placeholder="Year" id="year" name="year" [(ngModel)]="year">
+                <div>
+                   <textarea placeholder="Short description" id="description" name="description" [(ngModel)]="description"></textarea>
+                <div>
+                     <input type="text" placeholder="Language" id="language" name="language" [(ngModel)]="language">
+                <div>
+                     <input type="text" placeholder="Rating" id="rating" name="rating" [(ngModel)]="rating">
+                
+                <div>
+                    <button id="add">ADD</button>
+                    <button id="cancel" (click)="resetForm()">CANCEL</button>
+                </div></div></div></div></div></div> </div> 
+    </form>
+</body>
+</html>
