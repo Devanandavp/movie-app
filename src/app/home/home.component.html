@@ -1,4 +1,4 @@
-<h1>MOVIE MANIA</h1>
+<!-- <h1>MOVIE MANIA</h1>
 <h2>"Cinematic experiences, simplified"</h2>
 <nav id="dynamic-island">
 <div class="filters">
@@ -21,12 +21,7 @@
   </select>
 </div>
 </nav>
-<nav id="island">
-  <ul class="nav">
-    <li><a href="/home"><img src="https://cdn.vectorstock.com/i/1000v/14/04/home-icon-vector-20131404.jpg" alt="Home" /></a></li>
-    <li><a href="/admin"><img src="https://static.vecteezy.com/system/resources/previews/026/823/004/non_2x/feedback-form-icon-icon-related-to-survey-line-icon-style-simple-design-editable-vector.jpg" alt="Contact Us" /></a></li>
-  </ul>
-</nav>
+
 <form (ngSubmit)="onSearch(searchInput.value)" #searchForm="ngForm">
   <input
     type="search"
@@ -39,27 +34,102 @@
   <button type="submit" [disabled]="!searchForm.valid">Search</button>
 </form>
 
-
 <div class="movie-grid">
   <div *ngFor="let movie of movies" class="movie-card" (click)="goToDetails(movie)">
   <img
     [src]="movie.backdrop_path? 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path: '/assets/images/default-poster.jpg'"
-    [alt]="movie.title"
-  />
+    [alt]="movie.title"/>
       <div class="movie-info">
         <h3>{{ movie.title }}</h3>
         <p><strong>Release:</strong> {{ movie.release_date }}</p>
         <p><strong>Rating:</strong> {{ movie.vote_average }} ⭐</p>
       </div>
   </div>
-</div> 
+</div>  -->
+ <!-- *ngFor="let movie of (filteredMovies.length ? filteredMovies : movies)" -->
 
-
-<div class="movie-tiles">
-  <div *ngFor="let movie of filteredMovies" class="movie-tile" (click)="goToDetails(movie)">
+<!-- <div class="movie-tiles">
+  <div *ngFor="let movie of (filteredMovies.length ? filteredMovies : movies)"   class="movie-tile">
     <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
       <h3>{{ movie.title }}</h3>
     <p>{{ movie.release_date | date }}</p>
     <p><strong>Rating:</strong> {{ movie.vote_average }} ⭐</p>
+  </div>
+</div> -->
+<!-- <div class="movie-grid">
+  <div *ngFor="let movie of filteredMovies" class="movie-card" (click)="goToDetails(movie)">
+    <img
+      [src]="movie.backdrop_path ? 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path : '/assets/images/default-poster.jpg'"
+      [alt]="movie.title"/>
+    <div class="movie-info">
+      <h3>{{ movie.title }}</h3>
+      <p><strong>Release:</strong> {{ movie.release_date }}</p>
+      <p><strong>Rating:</strong> {{ movie.vote_average }} ⭐</p>
+    </div>
+  </div>
+</div> -->
+<h1>MOVIE MANIA</h1>
+<h2>"Cinematic experiences, simplified"</h2>
+<nav id="island">
+  <ul class="nav">
+    <li><a href="/home"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7UYYcI8JoGz9nvKkC2CrX-p-7pjKdy9pksw&s" alt="Home" /></a></li>
+    <li><a href="/admin"><img src="https://t4.ftcdn.net/jpg/02/27/45/09/360_F_227450952_KQCMShHPOPebUXklULsKsROk5AvN6H1H.jpg" alt="Contact Us" /></a>
+    </li>
+    <li><a href="/form"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsbmE0-nELZagCpUu9xidM1_9eKNAd0XikXA&s"></a></li>
+  </ul>
+</nav>
+<nav id="dynamic-island">
+  <div class="filters">
+    <select [(ngModel)]="filters.language" (change)="onFilterChange()">
+      <option value="">Language</option>
+      <option value="en">English</option>
+      <option value="fr">French</option>
+    </select>
+
+    <select [(ngModel)]="filters.releaseYear" (change)="onFilterChange()">
+      <option value="">Release Year</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+    </select>
+
+    <select [(ngModel)]="filters.genre" (change)="onFilterChange()">
+      <option value="">Genre</option>
+      <option value="28">Action</option>
+      <option value="35">Comedy</option>
+    </select>
+  </div>
+</nav>
+
+<form (ngSubmit)="onSearch(searchInput.value)" #searchForm="ngForm">
+  <input
+    type="search"
+    name="movie"
+    ngModel
+    #searchInput="ngModel"
+    [(ngModel)]="searchQuery"
+    (ngModelChange)="onFilterChange()"
+    required
+    placeholder="Search for a movie..."
+  />
+  <button type="submit" [disabled]="!searchForm.valid">Search</button>
+</form>
+
+<div class="movie-grid">
+  <div
+    *ngFor="let movie of filteredMovies"
+    class="movie-card"
+    (click)="goToDetails(movie)"
+  >
+    <img
+      [src]="movie.backdrop_path
+        ? 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path
+        : '/assets/images/default-poster.jpg'"
+      [alt]="movie.title"
+    />
+    <div class="movie-info">
+      <h3>{{ movie.title }}</h3>
+      <p><strong>Release:</strong> {{ movie.release_date }}</p>
+      <p><strong>Rating:</strong> {{ movie.vote_average }} ⭐</p>
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders,HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environment';
 import { Injectable } from '@angular/core';
@@ -25,7 +25,7 @@ export interface Movies {
 export class MovieService {
   private apiKey = environment.apiKey;
   private apiUrl = environment.apiUrl;
-
+  private readonly baseUrl = 'http://localhost:3000/api/admin';
   constructor(private http: HttpClient) { }
 
   getMovies(): Observable<any> {
@@ -40,8 +40,29 @@ export class MovieService {
     return this.http.get<any>(`${this.apiUrl}/movie/${id}/credits?api_key=${this.apiKey}&language=en-US`);
   }
 
-  createMovie(movieData: any): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<any>(`http://localhost:3000/api/admin/create-movie`, movieData, { headers, observe: 'response' });
-  }
+  
+  createMovie(movieData: Movies): Observable<HttpResponse<any>> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      observe: 'response' as const
+    };
+    return this.http.post<any>(
+      `${this.baseUrl}/create-movie`,
+      movieData,
+      httpOptions
+    );
 }
+}
+
+
+
+  // createMovie(movieData: Movies): Observable<HttpResponse<any>> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  //     observe: 'response' as const
+  //   };
+  //   return this.http.post<any>(
+  //     `${this.baseUrl}/create-movie`,
+  //     movieData,
+  //     httpOptions
+  //   );

@@ -3,7 +3,6 @@ import { Movies, MovieService} from '../movie.service';
 import { Movie } from '../movie.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-// import { MovieService, Movie } from '../movie.service';
 @Component({
   selector: 'app-adminpg',
   imports: [ FormsModule,CommonModule],
@@ -12,38 +11,49 @@ import { CommonModule } from '@angular/common';
 })
 export class AdminpgComponent {
   name = '';
-  year = 0;
+  year: number | null = null;
   description = '';
   language = '';
-  rating = 0;
-  constructor(private movieService:MovieService) {}
-  add() {
-    const movie: Movies= {
-  name:this.name,
-    year:this.year,
-    description : this.description,
-    language: this.language,
-    rating: this.rating};
+  rating: number | null = null;
+
+  constructor(private movieService: MovieService) {}
+
+  add(): void {
+    if (!this.name || !this.year || !this.description || !this.language || !this.rating) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    const movie: Movies = {
+      name: this.name,
+      year: this.year,
+      description: this.description,
+      language: this.language,
+      rating: this.rating
+    };
 
     this.movieService.createMovie(movie).subscribe({
-      next: (res:any) => {
-        alert('Movie added successfully!');
-        console.log('Response:', res);
+      next: (res) => {
+        if (res.status === 201 || res.status === 200) {
+          alert('Movie added successfully!');
+        } else {
+          alert(`Unexpected response: ${res.status}`);
+        }
         this.resetForm();
       },
-      error: (err:any) => {
+      error: (err) => {
         console.error('Error:', err);
-        alert('Oops! Could not add movie.');
+        alert('Oops! Could not add the movie.');
       }
     });
   }
 
-   resetForm(): void {
+  resetForm(): void {
     this.name = '';
-    this.year = 0;
+    this.year = null;
     this.description = '';
     this.language = '';
-    this.rating = 0;
+    this.rating = null;
   }
 }
 

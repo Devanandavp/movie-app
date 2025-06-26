@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { MoviedetailComponent } from './moviedetail/moviedetail.component';
 import { LoginComponent } from './login/login.component';
 import { AdminpgComponent } from './adminpg/adminpg.component';
+import { FormComponent } from './form/form.component';
 import { RouterModule } from '@angular/router';
 export const routes: Routes = [
     {
@@ -17,5 +18,7 @@ export const routes: Routes = [
     {
         path:'admin',component:AdminpgComponent
     },
-    // { path: 'search', component: SearchComponent },
+    {
+         path: 'form', component: FormComponent 
+    },
 ];
