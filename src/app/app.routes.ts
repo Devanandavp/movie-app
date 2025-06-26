@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-// import { MovieDetailComponent } from './moviedetail/moviedetail.component';
+import { MoviedetailComponent } from './moviedetail/moviedetail.component';
 import { LoginComponent } from './login/login.component';
 import { AdminpgComponent } from './adminpg/adminpg.component';
-
+import { RouterModule } from '@angular/router';
 export const routes: Routes = [
     {
         path:'',component:LoginComponent
@@ -11,10 +11,11 @@ export const routes: Routes = [
     {
         path:'home',component:HomeComponent
     },
-    // {
-        // path:'detail',component:MovieDetailComponent
-    // },
+    {
+        path:'movie/:id',component:MoviedetailComponent
+    },
     {
         path:'admin',component:AdminpgComponent
-    }
+    },
+    // { path: 'search', component: SearchComponent },
 ];

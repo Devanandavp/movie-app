@@ -1,0 +1,51 @@
+.movie-detail {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #2c2e45;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+  color: #eee;
+}
+
+.movie-detail img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.movie-detail h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #f4ec42;
+}
+
+.movie-detail p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.movie-detail p strong {
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .movie-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .movie-detail-content {
+    flex: 1;
+  }
+  .movie-detail img {
+    margin: 0;
+    max-width: 300px;
+  }
+}
