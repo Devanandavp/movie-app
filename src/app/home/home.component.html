@@ -88,20 +88,27 @@
 
     <select [(ngModel)]="filters.releaseYear" (change)="onFilterChange()">
       <option value="">Release Year</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
       <option value="2023">2023</option>
       <option value="2022">2022</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
     </select>
 
     <select [(ngModel)]="filters.genre" (change)="onFilterChange()">
       <option value="">Genre</option>
       <option value="28">Action</option>
       <option value="35">Comedy</option>
+      <option value=" 18">Drama</option>
+      <option value="27">Horror</option>
     </select>
   </div>
 </nav>
 
 <form (ngSubmit)="onSearch(searchInput.value)" #searchForm="ngForm">
-  <input
+  <div class="searchclass">
+    <input
     type="search"
     name="movie"
     ngModel
@@ -112,6 +119,8 @@
     placeholder="Search for a movie..."
   />
   <button type="submit" [disabled]="!searchForm.valid">Search</button>
+  </div>
+  <app-voice-search></app-voice-search>
 </form>
 
 <div class="movie-grid">

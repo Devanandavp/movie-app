@@ -1,0 +1,17 @@
+<div class="voice-search">
+<input #speechText id="speechText" type="text" placeholder="Speak to search a movie" />
+ 
+  <button 
+    *ngIf="!isRecording" 
+    (click)="startRecording()" 
+    class="start-btn">
+    🎙️ Start
+</button>
+ 
+  <button 
+    *ngIf="isRecording" 
+    (click)="stopRecording()" 
+    class="stop-btn">
+    ⏹️ Stop
+</button>
+</div>

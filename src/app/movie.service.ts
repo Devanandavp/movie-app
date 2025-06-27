@@ -56,13 +56,3 @@ export class MovieService {
 
 
 
-  // createMovie(movieData: Movies): Observable<HttpResponse<any>> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  //     observe: 'response' as const
-  //   };
-  //   return this.http.post<any>(
-  //     `${this.baseUrl}/create-movie`,
-  //     movieData,
-  //     httpOptions
-  //   );

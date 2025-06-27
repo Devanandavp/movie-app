@@ -1,34 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback-Form</title>
-</head>
 <body>
-    <form class="container">
-        <h1 class="one">FEEDBACK</h1>
-        <p id="one"> Please provide your feedback and critique for the app!</p>
-        <div class="two">
-            <p > Name <input type="text" name="name" id="box1" required>
-            </p>
-            <div class="three">
-                <p > Email <input type="email" name="email" id="box2" required>
-                </p>
-            <div class="four">
-                <p > Phone Number  <input type="text" name="phoneNumber" id="box3" required>
-                </p>
-            <div class="six">
-                <p >Feedback
-                <textarea type="text" id="box5" ></textarea>
-                </p>
-            <div class="but" >
-                <button type="submit">SUBMIT</button>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-    </form>
+<form (ngSubmit)="onSubmit()">
+    <h1 class="one">FEEDBACK</h1>
+  <div class="two">
+    Name <input type="text" name="name" id="box1" [(ngModel)]="user.name" required>
+  </div>
+  <div class="three">
+    Email <input type="email" name="email" id="box2" [(ngModel)]="user.email" required>
+  </div>
+  <div class="four">
+    Phone Number <input type="text" name="phoneNumber" id="box3" [(ngModel)]="user.phoneNumber" required>
+  </div>
+  <div class="six">
+    Feedback
+    <textarea name="feedback" id="box5" [(ngModel)]="user.feedback" required></textarea>
+  </div>
+  <div class="but">
+    <button type="submit">SUBMIT</button>
+  </div>
+</form>
 </body>
-</html>

@@ -1,9 +1,8 @@
-h1{
+/* h1{
     text-align: center;
     color: aliceblue;
     font-size: 40px;
     text-transform: capitalize;
-    /* text-decoration: underline; */
 }
 #one{
     text-align: center;
@@ -56,4 +55,87 @@ textarea {
     box-sizing: border-box;
     resize: vertical;
 }
+ */
+/* General Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(54, 54, 101);
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+form {
+  background-color:rgba(198, 205, 212, 0.37);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+h1.one {
+  text-align: center;
+  color: aliceblue;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: aliceblue;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent;
+  color: aliceblue;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button Styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(242, 243, 243);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #bdc3c7;
+}

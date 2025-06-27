@@ -4,10 +4,11 @@ import { MovieService } from '../movie.service';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
+
 @Component({
   selector: 'app-moviedetail',
   standalone:true,
-  imports:[FormsModule, NgIf],
+  imports:[FormsModule],
   templateUrl: './moviedetail.component.html',
   styleUrls: ['./moviedetail.component.css']
 })
@@ -19,7 +20,6 @@ export class MoviedetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    // const id = Number(params.get('id'));
     console.log("this is the id: ",id);
     this.movieService.getMovieById(id).subscribe(data => {
       this.movie = data;

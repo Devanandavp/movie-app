@@ -11,10 +11,12 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MoviedetailComponent } from './moviedetail/moviedetail.component';
 import { AdminpgComponent } from './adminpg/adminpg.component';
-
+import { NgModule } from '@angular/core';
+import {VoiceSearchComponent} from './voice-search/voice-search.component';
+// import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,FormComponent,HomeComponent,AdminpgComponent,LoginComponent,CommonModule,FormsModule,MoviedetailComponent],
+  imports: [RouterOutlet,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

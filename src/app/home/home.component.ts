@@ -6,10 +6,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment';
+import {VoiceSearchComponent} from '../voice-search/voice-search.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  imports:[FormsModule,DatePipe,CommonModule],
+  imports:[FormsModule,CommonModule, VoiceSearchComponent],
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
